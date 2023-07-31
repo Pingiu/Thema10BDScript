@@ -1,0 +1,31 @@
+<?php
+/** @var \Perspective\Thema10exercise1\Block\Template $block */
+$viewModel = $block->getViewModel();
+/* $collection = $viewModel->getReviewCollection();
+foreach($collection as $item){
+echo "<pre>";
+print_r($item->getData());
+echo "</pre>";
+} */
+
+$ids = 35;
+$products = $viewModel->getProductCollectionByCategories($ids);
+$collection = $viewModel->getReviewCollection();
+foreach ($products as $product) {
+    $productTemp = $product->getId();
+    foreach ($collection as $item) {
+        $productIdTemp = $item->getData("IDProd");
+        if ($productTemp == $productIdTemp) 
+        {
+            echo "Product ID: " . $item->getData("IDProd") . "<br />";
+            echo "Product Sku: " . $product->getData("sku") . "<br />";
+            echo "Product Price: " . round($product->getData("price"),2) . " $<br />";
+            echo "Product Category: " . $ids . "<br />";
+            echo "Product Review: " . $item->getData("TextRev") . "<br />";
+            $productImages = $viewModel->getProductImages($item->getData("IDProd"));
+            foreach ($productImages as $image) {
+                echo "Product Url: " . $image->getUrl() . "<br/>";
+                echo "<img src=" . $image->getUrl() . " width='150' height='150' />" . "<br/>";
+        }}}}
+?>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="thema10exercise1" frontName="thema10exercise1">
+            <module name="Perspective_Thema10exercise1" />
+        </route>
+    </router>
+</config>
